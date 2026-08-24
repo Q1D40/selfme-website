@@ -1,407 +1,218 @@
+:root {
+  --ink: #101313;
+  --paper: #f2f5f3;
+  --green: #20a67a;
+  --coral: #ef654a;
+  --line-dark: rgba(16, 19, 19, 0.2);
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-a,
-button {
-    -webkit-tap-highlight-color: transparent;
-}
-
-button {
-    appearance: none;
-    -webkit-appearance: none;
-    font: inherit;
-}
-
-a:focus,
-button:focus {
-    outline: none;
-}
-
-a:focus-visible,
-button:focus-visible {
-    outline: 2px solid rgba(111, 196, 255, 0.72);
-    outline-offset: 3px;
+html {
+  background: var(--paper);
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: radial-gradient(ellipse at center, rgba(60, 200, 255, 0.14) 0%, transparent 70%), radial-gradient(circle at top right, rgba(99, 184, 255, 0.10), transparent 28%), #0a1628;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  min-width: 320px;
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Manrope", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  letter-spacing: 0;
 }
 
-.logo,
-.brand-name,
-.tagline,
-.status-line,
-.install-label,
-.copy-button,
-.secondary-link,
-.site-switch,
-.site-switch-link {
-    user-select: none;
-    -webkit-user-select: none;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.container {
-    text-align: center;
-    padding: 40px 20px;
+a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
 }
 
-.logo-wrapper {
-    margin-bottom: 36px;
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 84svh;
+  overflow: hidden;
+  background: var(--paper);
 }
 
-.logo {
-    width: 188px;
-    height: 188px;
-    filter: drop-shadow(0 0 34px rgba(60, 200, 255, 0.18));
-    animation: float 6s ease-in-out infinite;
-    object-fit: contain;
+.hero-visual {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+.site-header,
+.hero-copy {
+  width: min(1440px, calc(100% - 96px));
+  margin: 0 auto;
 }
 
-.brand-name {
-    font-size: clamp(3rem, 8vw, 5rem);
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #f6fbff;
-    margin-bottom: 14px;
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 76px;
+  border-bottom: 1px solid var(--line-dark);
 }
 
-.tagline {
-    font-size: clamp(1rem, 2.8vw, 1.4rem);
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: #edf4fb;
-    margin-bottom: 12px;
-    text-transform: uppercase;
+.wordmark {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
 }
 
-.status-line {
-    font-size: clamp(0.95rem, 2.2vw, 1.08rem);
-    color: rgba(237, 244, 251, 0.72);
-    letter-spacing: 0.03em;
-    margin-bottom: 24px;
+.continuation {
+  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
 }
 
-.secondary-status {
-    margin-top: 16px;
-    margin-bottom: 0;
-    font-size: clamp(0.82rem, 1.9vw, 0.96rem);
-    color: rgba(237, 244, 251, 0.54);
+.hero-copy {
+  align-self: center;
+  width: min(580px, calc(100% - 96px));
+  margin: 0;
+  margin-left: max(48px, calc((100% - 1440px) / 2));
+  padding: 72px 0 52px;
+  transform: translateY(-40px);
 }
 
-.install-card {
-    width: 100%;
-    padding: 14px 14px 12px;
-    border: 1px solid rgba(60, 200, 255, 0.16);
-    border-radius: 16px;
-    background: linear-gradient(180deg, rgba(18, 32, 51, 0.94) 0%, rgba(12, 24, 40, 0.88) 100%);
-    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+h1 {
+  max-width: 660px;
+  margin: 0;
+  font-size: 82px;
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: 0;
 }
 
-.install-label {
-    margin-bottom: 8px;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(237, 244, 251, 0.58);
+.statement {
+  max-width: 560px;
+  margin: 30px 0 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.65;
+  white-space: nowrap;
 }
 
-.install-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.continuation {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 170px;
+  padding: 38px max(48px, calc((100% - 1440px) / 2));
+  color: var(--paper);
+  background: var(--ink);
 }
 
-.install-row code {
-    flex: 1;
-    min-width: 0;
-    padding: 11px 13px;
-    border: 1px solid rgba(60, 200, 255, 0.18);
-    border-radius: 13px;
-    background: rgba(6, 14, 25, 0.84);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    font-family: 'SFMono-Regular', 'SF Mono', 'JetBrains Mono', Menlo, monospace;
-    font-size: 0.92rem;
-    color: #dff4ff;
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.continuation p {
+  margin: 0;
 }
 
-.copy-button {
-    flex: 0 0 auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    min-width: 40px;
-    padding: 0;
-    border: 1px solid rgba(99, 184, 255, 0.22);
-    border-radius: 12px;
-    background: rgba(60, 200, 255, 0.08);
-    color: #dff4ff;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+.continuation p:last-child {
+  max-width: 420px;
+  font-family: "Manrope", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
-.copy-button-text {
-    display: none;
-    line-height: 1;
-    font-size: 0.73rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
+@media (max-width: 920px) {
+  .site-header,
+  .hero-copy {
+    width: min(100% - 56px, 1440px);
+  }
 
-.copy-button svg {
-    width: 15px;
-    height: 15px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
+  .hero-copy {
+    width: min(580px, calc(100% - 56px));
+    margin-left: 28px;
+    transform: translateY(-32px);
+  }
 
-.copy-icon-success {
-    stroke-width: 2.1;
-}
+  .statement {
+    max-width: 420px;
+    white-space: normal;
+  }
 
-.copy-icon-success {
-    display: none;
-}
-
-.copy-button.is-copied {
-    border-color: rgba(123, 224, 182, 0.34);
-    background: rgba(123, 224, 182, 0.12);
-    color: #bff5dd;
-}
-
-.copy-button.is-copied .copy-icon-default {
-    display: none;
-}
-
-.copy-button.is-copied .copy-icon-success {
-    display: block;
-}
-
-.copy-button:active {
-    transform: translateY(0);
-}
-
-.actions {
-    width: min(500px, calc(100vw - 48px));
-    margin: 0 auto;
-}
-
-.secondary-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
-    margin-top: 12px;
-    min-height: 42px;
-    padding: 0 18px;
-    border-radius: 999px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: rgba(223, 244, 255, 0.96);
-    background: linear-gradient(180deg, rgba(60, 200, 255, 0.11) 0%, rgba(60, 200, 255, 0.06) 100%);
-    border: 1px solid rgba(99, 184, 255, 0.24);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-    text-decoration: none;
-    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-}
-
-.secondary-link svg {
-    width: 15px;
-    height: 15px;
-    fill: currentColor;
-    opacity: 0.92;
-}
-
-.secondary-link span {
-    white-space: nowrap;
-}
-
-.link-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 12px;
-}
-
-.secondary-link {
-    margin-top: 0;
-}
-
-
-.site-switch {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 6px 8px;
-    border-radius: 999px;
-    background: rgba(8, 16, 29, 0.42);
-    border: 1px solid rgba(99, 184, 255, 0.14);
-    backdrop-filter: blur(12px);
-}
-
-.site-switch-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 32px;
-    min-width: 0;
-    padding: 0 12px;
-    border-radius: 999px;
-    color: rgba(237, 244, 251, 0.68);
-    text-decoration: none;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 160ms ease, background 160ms ease;
-}
-
-.site-switch-link.is-active {
-    color: #0a1628;
-    background: rgba(237, 244, 251, 0.94);
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .copy-button:hover {
-        transform: translateY(-1px);
-        border-color: rgba(99, 184, 255, 0.34);
-        background: rgba(60, 200, 255, 0.13);
-    }
-
-    .secondary-link:hover {
-        transform: translateY(-1px);
-        border-color: rgba(99, 184, 255, 0.38);
-        background: linear-gradient(180deg, rgba(60, 200, 255, 0.15) 0%, rgba(60, 200, 255, 0.08) 100%);
-    }
-
-    .site-switch-link:hover {
-        color: rgba(237, 244, 251, 0.96);
-    }
-
-    .site-switch-link.is-active:hover {
-        color: #0a1628;
-        background: rgba(237, 244, 251, 0.98);
-    }
+  h1 {
+    font-size: 64px;
+  }
 }
 
 @media (max-width: 640px) {
-    body {
-        justify-content: flex-start;
-        padding-top: calc(env(safe-area-inset-top, 0px) + 96px);
-        padding-bottom: 28px;
-        overflow: auto;
-    }
+  .hero {
+    min-height: 82svh;
+  }
 
-    .container {
-        width: 100%;
-        padding-top: 30px;
-    }
+  .hero-visual {
+    object-position: 22% center;
+  }
 
-    .site-switch {
-        left: 50%;
-        right: auto;
-        top: calc(env(safe-area-inset-top, 0px) + 8px);
-        transform: translateX(-50%);
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 4px;
-        width: min(248px, calc(100vw - 28px));
-        padding: 4px;
-    }
+  .site-header,
+  .hero-copy {
+    width: min(100% - 40px, 1440px);
+  }
 
-    .site-switch-link {
-        min-height: 28px;
-        padding: 0 7px;
-        font-size: 0.64rem;
-        letter-spacing: 0.04em;
-    }
+  .site-header {
+    min-height: 64px;
+  }
 
-    .logo-wrapper {
-        margin-bottom: 32px;
-    }
+  .wordmark {
+    font-size: 16px;
+  }
 
-    .install-row {
-        flex-direction: column;
-        align-items: stretch;
-    }
+  .continuation {
+    font-size: 10px;
+  }
 
-    .copy-button {
-        width: 100%;
-        gap: 8px;
-        padding: 0 14px;
-        justify-content: center;
-    }
+  .hero-copy {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    padding: 44px 0 36px;
+    transform: translateY(-24px);
+  }
 
-    .copy-button-text {
-        display: inline;
-    }
+  h1 {
+    font-size: 47px;
+    line-height: 1.08;
+  }
 
-    .secondary-link {
-        width: 100%;
-    }
+  .statement {
+    max-width: 250px;
+    margin-top: 22px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .continuation {
+    min-height: 142px;
+    padding: 28px 20px;
+  }
+
+  .continuation p:last-child {
+    font-size: 19px;
+  }
+
 }
 
-@media (max-width: 480px) {
-    body {
-        padding-top: calc(env(safe-area-inset-top, 0px) + 104px);
-    }
-
-    .container {
-        padding-top: 34px;
-    }
-
-    .logo {
-        width: 144px;
-        height: 144px;
-    }
-    
-    .brand-name {
-        letter-spacing: 0.08em;
-    }
-
-    .site-switch {
-        width: min(232px, calc(100vw - 24px));
-    }
-    
-    .install-card {
-        padding: 13px;
-    }
-
-    .secondary-link {
-        width: 100%;
-    }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
