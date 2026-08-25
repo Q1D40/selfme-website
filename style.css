@@ -11,17 +11,29 @@
 }
 
 html {
-  background: var(--paper);
+  height: 100%;
+  background: var(--ink);
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body {
+  height: 100%;
   min-width: 320px;
   margin: 0;
   color: var(--ink);
-  background: var(--paper);
+  background: var(--ink);
+  overflow: hidden;
   font-family: "Manrope", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
   letter-spacing: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--ink);
 }
 
 a {
@@ -39,7 +51,8 @@ a:focus-visible {
   isolation: isolate;
   display: grid;
   grid-template-rows: auto 1fr;
-  min-height: 84svh;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: hidden;
   background: var(--paper);
 }
@@ -115,8 +128,8 @@ h1 {
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: 170px;
-  padding: 38px max(48px, calc((100% - 1440px) / 2));
+  min-height: clamp(128px, 15vh, 170px);
+  padding: clamp(24px, 3.2vh, 38px) max(48px, calc((100% - 1440px) / 2)) calc(clamp(24px, 3.2vh, 38px) + env(safe-area-inset-bottom, 0px));
   color: var(--paper);
   background: var(--ink);
 }
@@ -156,10 +169,6 @@ h1 {
 }
 
 @media (max-width: 640px) {
-  .hero {
-    min-height: 82svh;
-  }
-
   .hero-visual {
     object-position: 22% center;
   }
@@ -201,8 +210,8 @@ h1 {
   }
 
   .continuation {
-    min-height: 142px;
-    padding: 28px 20px;
+    min-height: clamp(112px, 14vh, 142px);
+    padding: clamp(20px, 3vh, 28px) 20px calc(clamp(20px, 3vh, 28px) + env(safe-area-inset-bottom, 0px));
   }
 
   .continuation p:last-child {
