@@ -1,227 +1,195 @@
 :root {
-  --ink: #101313;
-  --paper: #f2f5f3;
-  --green: #20a67a;
-  --coral: #ef654a;
-  --line-dark: rgba(16, 19, 19, 0.2);
+  color-scheme: dark;
+  --space: #030609;
+  --starlight: #f0f5ff;
+  --copy: rgba(233, 241, 255, 0.82);
+  --soft-copy: rgba(214, 228, 248, 0.58);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html,
+body {
+  min-height: 100%;
+}
+
 html {
-  height: 100%;
-  background: var(--ink);
-  scroll-behavior: smooth;
-  overflow: hidden;
+  background: var(--space);
 }
 
 body {
-  height: 100%;
   min-width: 320px;
   margin: 0;
-  color: var(--ink);
-  background: var(--ink);
   overflow: hidden;
+  color: var(--starlight);
+  background: var(--space);
   font-family: "Manrope", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
   letter-spacing: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  height: 100dvh;
+.space-page {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 100svh;
+  min-height: 100dvh;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--space);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.space-scene {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--space);
 }
 
-a:focus-visible {
-  outline: 2px solid var(--green);
-  outline-offset: 4px;
+.star-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star-canvas {
+  display: block;
 }
 
 .hero {
   position: relative;
-  isolation: isolate;
+  z-index: 1;
   display: grid;
-  grid-template-rows: auto 1fr;
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow: hidden;
-  background: var(--paper);
-}
-
-.hero-visual {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
+  place-items: center;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding: 40px 48px;
 }
 
-.site-header,
 .hero-copy {
-  width: min(1440px, calc(100% - 96px));
-  margin: 0 auto;
+  width: min(100%, 900px);
+  padding: 0;
+  text-align: center;
 }
 
-.site-header {
-  display: flex;
+.brand-lockup {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  min-height: 76px;
-  border-bottom: 1px solid var(--line-dark);
-}
-
-.wordmark {
-  font-size: 18px;
+  gap: 16px;
+  margin-bottom: 86px;
+  color: var(--starlight);
+  font-size: 32px;
   font-weight: 800;
   line-height: 1;
   letter-spacing: 0;
 }
 
-.continuation {
-  font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: 0;
-}
-
-.hero-copy {
-  align-self: center;
-  width: min(580px, calc(100% - 96px));
-  margin: 0;
-  margin-left: max(48px, calc((100% - 1440px) / 2));
-  padding: 72px 0 52px;
-  transform: translateY(-40px);
+.brand-mark {
+  display: block;
+  width: 64px;
+  height: auto;
+  -webkit-user-drag: none;
 }
 
 h1 {
-  max-width: 660px;
   margin: 0;
-  font-size: 82px;
-  font-weight: 800;
-  line-height: 1.03;
+  color: var(--starlight);
+  font-size: 78px;
+  font-weight: 700;
+  line-height: 1.07;
   letter-spacing: 0;
+  text-wrap: balance;
+  text-shadow: 0 0 24px rgba(185, 214, 255, 0.16);
+}
+
+h1 span {
+  display: block;
+}
+
+h1 span + span {
+  margin-top: 10px;
 }
 
 .statement {
-  max-width: 560px;
-  margin: 30px 0 0;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.65;
-  white-space: nowrap;
-}
-
-.continuation {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-height: clamp(128px, 15vh, 170px);
-  padding: clamp(24px, 3.2vh, 38px) max(48px, calc((100% - 1440px) / 2)) calc(clamp(24px, 3.2vh, 38px) + env(safe-area-inset-bottom, 0px));
-  color: var(--paper);
-  background: var(--ink);
-}
-
-.continuation p {
+  position: absolute;
+  right: 48px;
+  bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+  left: 48px;
   margin: 0;
-}
-
-.continuation p:last-child {
-  max-width: 420px;
-  font-family: "Manrope", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1.35;
+  color: var(--soft-copy);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: center;
 }
 
 @media (max-width: 920px) {
-  .site-header,
-  .hero-copy {
-    width: min(100% - 56px, 1440px);
+  .hero {
+    padding: 36px 28px;
   }
 
-  .hero-copy {
-    width: min(580px, calc(100% - 56px));
-    margin-left: 28px;
-    transform: translateY(-32px);
+  .brand-lockup {
+    gap: 14px;
+    margin-bottom: 72px;
+    font-size: 29px;
   }
 
-  .statement {
-    max-width: 420px;
-    white-space: normal;
+  .brand-mark {
+    width: 60px;
   }
 
   h1 {
     font-size: 64px;
   }
+
+  .statement {
+    right: 28px;
+    bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+    left: 28px;
+  }
 }
 
 @media (max-width: 640px) {
-  .hero-visual {
-    object-position: 22% center;
-  }
-
-  .site-header,
-  .hero-copy {
-    width: min(100% - 40px, 1440px);
-  }
-
-  .site-header {
-    min-height: 64px;
-  }
-
-  .wordmark {
-    font-size: 16px;
-  }
-
-  .continuation {
-    font-size: 10px;
+  .hero {
+    padding: 28px 20px;
   }
 
   .hero-copy {
-    width: calc(100% - 40px);
-    margin-left: 20px;
-    padding: 44px 0 36px;
-    transform: translateY(-24px);
+    padding: 0;
+  }
+
+  .brand-lockup {
+    gap: 13px;
+    margin-bottom: 58px;
+    font-size: 26px;
+  }
+
+  .brand-mark {
+    width: 54px;
   }
 
   h1 {
-    font-size: 47px;
-    line-height: 1.08;
+    font-size: 46px;
+    line-height: 1.12;
+  }
+
+  h1 span + span {
+    margin-top: 12px;
   }
 
   .statement {
-    max-width: 250px;
-    margin-top: 22px;
-    font-size: 16px;
-    line-height: 1.65;
+    right: 20px;
+    bottom: calc(34px + env(safe-area-inset-bottom, 0px));
+    left: 20px;
+    font-size: 15px;
   }
 
-  .continuation {
-    min-height: clamp(112px, 14vh, 142px);
-    padding: clamp(20px, 3vh, 28px) 20px calc(clamp(20px, 3vh, 28px) + env(safe-area-inset-bottom, 0px));
-  }
-
-  .continuation p:last-child {
-    font-size: 19px;
-  }
-
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
 }

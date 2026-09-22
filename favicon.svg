@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <title>SelfMe temporary bookmark icon</title>
-  <rect width="32" height="32" fill="#101313"/>
-  <text x="16" y="23" fill="#F2F5F3" font-family="Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle">S</text>
-  <rect x="23" y="4" width="5" height="5" fill="#20A67A"/>
+  <title>SelfMe placeholder mark</title>
+  <rect width="32" height="32" fill="#030609"/>
+  <rect x="3" y="3" width="26" height="26" rx="7.5" fill="#11151B" stroke="#77808C" stroke-width="0.85" stroke-linecap="round" stroke-dasharray="1.6 2.3"/>
+  <path d="M10.5 12.7C10.5 9.55 12.8 7.45 16 7.45C19.25 7.45 21.55 9.6 21.55 12.65C21.55 15.05 20.3 16.65 17.95 18.05C15.8 19.35 15.1 20.65 15.1 22.25" fill="none" stroke="#AAB3BE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="15.1" cy="26.05" r="1.15" fill="#AAB3BE"/>
 </svg>
