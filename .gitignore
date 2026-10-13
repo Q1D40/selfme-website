@@ -20,3 +20,12 @@ desktop.ini
 .env.local
 
 AGENTS.md
+
+# Local preview and temporary artifacts
+/.playwright-cli/
+/output/
+
+# Design source material is stored outside this public repository
+/design/
+/assets/*.prompt.txt
+/assets/*-source.*

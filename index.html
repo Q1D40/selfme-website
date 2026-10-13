@@ -2,36 +2,69 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#030609">
-  <meta name="description" content="SelfMe is building what comes next.">
-  <title>SELFME</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0D241E">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="下一次，不止于此。某种新的可能，正在成形。SelfMe，即将发生。">
+  <title>SelfMe · 下一次，不止于此</title>
+  <link rel="canonical" href="https://selfme.ai/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#008C77">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SelfMe">
+  <meta property="og:title" content="SelfMe · 下一次，不止于此">
+  <meta property="og:description" content="某种新的可能，正在成形。">
+  <meta property="og:url" content="https://selfme.ai/">
+  <meta property="og:image" content="https://selfme.ai/assets/selfme-og-dark.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SelfMe">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SelfMe · 下一次，不止于此">
+  <meta name="twitter:description" content="某种新的可能，正在成形。">
+  <meta name="twitter:image" content="https://selfme.ai/assets/selfme-og-dark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Noto+Serif+SC:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/evolution-loop.webp" as="image" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="space-page">
-    <div class="space-scene" aria-hidden="true">
-      <canvas class="star-canvas"></canvas>
-    </div>
+  <main class="teaser">
+    <header class="page-header">
+      <img class="brand-lockup" src="assets/selfme-logo-wordmark-dark.svg" width="2172" height="724" alt="SelfMe">
+      <p class="status"><span class="status-dot" aria-hidden="true"></span><span lang="en">COMING SOON</span></p>
+    </header>
 
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="hero-title" aria-describedby="hero-description">
       <div class="hero-copy">
-        <div class="brand-lockup">
-          <img class="brand-mark" src="assets/selfme-logo.svg" alt="" aria-hidden="true">
-          <span>SELFME</span>
-        </div>
-
         <h1 id="hero-title">
-          <span>仰望星空</span>
-          <span>把流浪，变成轨道</span>
+          <span class="headline-line">下一次，</span>
+          <span class="headline-line">不止于此。</span>
         </h1>
+        <p class="hero-description" id="hero-description">某种新的可能，正在成形。</p>
       </div>
-      <p class="statement">未来不会从天而降</p>
+
+      <div class="visual" aria-hidden="true">
+        <div class="visual-reveal">
+          <svg class="orbit-guides" viewBox="0 0 800 800" fill="none">
+            <ellipse class="orbit-guide" cx="400" cy="400" rx="365" ry="245" transform="rotate(-30 400 400)"></ellipse>
+            <ellipse class="orbit-guide orbit-guide-inner" cx="400" cy="400" rx="345" ry="220" transform="rotate(-30 400 400)"></ellipse>
+            <ellipse class="orbit-trace" cx="400" cy="400" rx="365" ry="245" transform="rotate(-30 400 400)" pathLength="100"></ellipse>
+          </svg>
+          <div class="visual-parallax">
+            <img class="loop-art" src="assets/evolution-loop.webp" width="1254" height="1254" alt="" decoding="async" fetchpriority="high">
+          </div>
+        </div>
+      </div>
     </section>
+
+    <footer class="page-footer">
+      <p class="footer-signature" lang="en">© <span id="year">2026</span> SelfMe</p>
+    </footer>
   </main>
 
   <script src="script.js" defer></script>
