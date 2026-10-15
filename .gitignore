@@ -25,7 +25,7 @@ AGENTS.md
 /.playwright-cli/
 /output/
 
-# Design source material is stored outside this public repository
+# Local-only design sources; keep out of public Git history
 /design/
 /assets/*.prompt.txt
 /assets/*-source.*
