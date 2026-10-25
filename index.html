@@ -3,70 +3,136 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0D241E">
+  <meta name="theme-color" content="#111315">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="下一次，不止于此。某种新的可能，正在成形。SelfMe，即将发生。">
-  <title>SelfMe · 下一次，不止于此</title>
+  <meta name="description" content="SelfMe 是基于本机 Codex 或 Claude Code 的项目自动演进桌面应用。围绕项目目标发现需求，衔接规划、开发、验证与交付，在需要判断时与你协作。">
+  <title>SelfMe — 让项目持续演进。</title>
   <link rel="canonical" href="https://selfme.ai/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#008C77">
-  <link rel="manifest" href="site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="SelfMe">
-  <meta property="og:title" content="SelfMe · 下一次，不止于此">
-  <meta property="og:description" content="某种新的可能，正在成形。">
+  <meta property="og:title" content="SelfMe — 让项目持续演进。">
+  <meta property="og:description" content="通过本机 Codex 或 Claude Code，衔接需求发现、开发、验证与交付，把需要你判断的事情带到面前。">
   <meta property="og:url" content="https://selfme.ai/">
   <meta property="og:image" content="https://selfme.ai/assets/selfme-og-dark.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="SelfMe">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="SelfMe · 下一次，不止于此">
-  <meta name="twitter:description" content="某种新的可能，正在成形。">
+  <meta name="twitter:title" content="SelfMe — 让项目持续演进。">
+  <meta name="twitter:description" content="基于本机 CLI 的项目自动演进桌面应用。">
   <meta name="twitter:image" content="https://selfme.ai/assets/selfme-og-dark.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Noto+Serif+SC:wght@400;500&amp;display=swap" rel="stylesheet">
-  <link rel="preload" href="assets/evolution-loop.webp" as="image" fetchpriority="high">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/showcase-host.css">
+  <script src="scripts/release.js" defer></script>
+  <script src="scripts/release-model.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/showcase-host.js" defer></script>
 </head>
-<body>
-  <main class="teaser">
-    <header class="page-header">
-      <img class="brand-lockup" src="assets/selfme-logo-wordmark-dark.svg" width="2172" height="724" alt="SelfMe">
-      <p class="status"><span class="status-dot" aria-hidden="true"></span><span lang="en">COMING SOON</span></p>
-    </header>
+<body id="top">
+<a class="skip-link" href="#main">跳到主要内容</a>
+<svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-up-right" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7M15 22v-3.4a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.3S17.3 3.4 15 5a12 12 0 0 0-6 0C6.7 3.4 5.7 3.7 5.7 3.7A4.3 4.3 0 0 0 5.6 7a4.7 4.7 0 0 0-1.3 3.3c0 4.7 2.8 5.7 5.5 6a3 3 0 0 0-.8 2.3V22"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path d="M15.7 2.5c.1 1.3-.5 2.5-1.2 3.2-.8.8-1.8 1.3-3 1.2-.1-1.2.5-2.5 1.2-3.2.8-.8 1.9-1.3 3-1.2ZM19.3 17.6c-.5 1.2-1.2 2.5-2.2 3.5-1.1 1.1-1.8.7-3.1.2-1.3-.4-2-.4-3.4.1-1.1.4-1.9.8-3-.3C4.5 18.2 2.9 12.9 5.2 9.9c1.1-1.5 3.1-2.1 4.7-1.6 1.4.5 2.2.6 3.5 0 1.7-.7 3.8-.4 5 1.1-3.2 1.9-2.7 6.4.9 8.2Z"/></symbol>
+  <symbol id="i-windows" viewBox="0 0 24 24"><path d="m3 5 8-1v7H3V5Zm10-1.2L21 2.5V11h-8V3.8ZM3 13h8v7l-8-1v-6Zm10 0h8v8.5l-8-1.3V13Z"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7m2-4v5l3 2"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v.1"/></symbol>
+</svg>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="SelfMe 首页"><img src="assets/selfme-logo-wordmark-dark.svg" width="2172" height="724" alt="SelfMe"></a>
+    <nav class="primary-nav" aria-label="主要导航"><a href="#workflow">工作方式</a><a href="#capabilities">项目能力</a><a href="#faq">常见问题</a></nav>
+    <div class="header-actions">
+      <button class="github-link" id="github-link" type="button" aria-label="在 GitHub 查看 SelfMe 源码"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span><svg class="icon small external-arrow" aria-hidden="true"><use href="#i-up-right"/></svg></button>
+      <button class="header-download" id="all-releases" type="button">所有版本<svg class="icon small" aria-hidden="true"><use href="#i-up-right"/></svg></button>
+      <button class="icon-button mobile-menu-toggle" id="menu-toggle" type="button" aria-label="展开导航" aria-controls="mobile-nav" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="移动导航" hidden><a href="#workflow">工作方式</a><a href="#capabilities">项目能力</a><a href="#faq">常见问题</a></nav>
+  </div>
+</header>
 
-    <section class="hero" aria-labelledby="hero-title" aria-describedby="hero-description">
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-lead">
       <div class="hero-copy">
-        <h1 id="hero-title">
-          <span class="headline-line">下一次，</span>
-          <span class="headline-line">不止于此。</span>
-        </h1>
-        <p class="hero-description" id="hero-description">某种新的可能，正在成形。</p>
+        <p class="product-definition"><span class="status-dot" aria-hidden="true"></span>基于本机 CLI 的项目自动演进桌面应用</p>
+        <h1 id="hero-title">让项目持续演进。</h1>
+        <p class="hero-description">通过本机 Codex 或 Claude Code，围绕项目目标发现需求，<br class="desktop-break">衔接规划、开发、验证与交付，把需要你判断的事情带到面前。</p>
       </div>
-
-      <div class="visual" aria-hidden="true">
-        <div class="visual-reveal">
-          <svg class="orbit-guides" viewBox="0 0 800 800" fill="none">
-            <ellipse class="orbit-guide" cx="400" cy="400" rx="365" ry="245" transform="rotate(-30 400 400)"></ellipse>
-            <ellipse class="orbit-guide orbit-guide-inner" cx="400" cy="400" rx="345" ry="220" transform="rotate(-30 400 400)"></ellipse>
-            <ellipse class="orbit-trace" cx="400" cy="400" rx="365" ry="245" transform="rotate(-30 400 400)" pathLength="100"></ellipse>
-          </svg>
-          <div class="visual-parallax">
-            <img class="loop-art" src="assets/evolution-loop.webp" width="1254" height="1254" alt="" decoding="async" fetchpriority="high">
-          </div>
+      <div class="download-control" id="download" tabindex="-1" aria-label="下载 SelfMe">
+        <p class="download-heading">获取 SelfMe</p>
+        <div class="download-split">
+          <button class="download-primary" id="download-primary" type="button"><svg class="icon platform-symbol" aria-hidden="true"><use id="download-platform-icon" href="#i-apple"/></svg><span id="download-button-label">下载 macOS 版</span></button>
+          <button class="download-options-toggle" id="download-options-toggle" type="button" data-download-trigger aria-label="其他下载" aria-controls="download-options" aria-expanded="false" aria-haspopup="dialog"><svg class="icon small" aria-hidden="true"><use href="#i-chevron"/></svg></button>
         </div>
+        <p class="download-version" id="download-version">v0.1.0 · .dmg · 128 MB</p>
+        <p class="download-system" id="download-system">需要 macOS 14.0 或更高版本</p>
       </div>
-    </section>
+    </div>
+    <figure class="overview-figure">
+      <div class="native-overview" id="overview-demo">
+        <iframe id="overview-frame" src="assets/previews/overview.html" title="SelfMe 演进总览动态演示" tabindex="-1" aria-hidden="true" sandbox="allow-scripts" loading="eager"></iframe>
+      </div>
+      <figcaption><span>从发现到反馈，在同一处看清整个项目的推进。</span></figcaption>
+    </figure>
+    <div class="tool-strip"><p>使用你本机的工具</p><span><img src="assets/openai-mark.svg" alt="" width="21" height="21">Codex</span><span class="tool-or">或</span><span><img src="assets/claude-code-mark.svg" alt="" width="22" height="22">Claude Code</span><p>让熟悉的工具，持续推进项目。</p></div>
+  </section>
 
-    <footer class="page-footer">
-      <p class="footer-signature" lang="en">© <span id="year">2026</span> SelfMe</p>
-    </footer>
-  </main>
+  <section class="workflow-section section-space" id="workflow" aria-labelledby="workflow-title">
+    <div class="wrap">
+      <div class="section-heading"><div><p class="section-label">工作方式</p><h2 id="workflow-title">一项改进，如何走到交付。</h2></div><p class="section-description">从“搜索找不到笔记正文”出发，<br class="desktop-break">看一个问题如何变成经过验证的改进。</p></div>
+      <div class="tour-navigation" role="tablist" aria-label="选择查看迭代阶段">
+        <button id="step-discover" class="tour-step" type="button" role="tab" aria-selected="true" aria-controls="scene-panel" data-scene="discover"><span class="tour-number">01</span><span>发现需求</span></button>
+        <button id="step-review" class="tour-step" type="button" role="tab" aria-selected="false" aria-controls="scene-panel" data-scene="review" tabindex="-1"><span class="tour-number">02</span><span>评估确认</span></button>
+        <button id="step-build" class="tour-step" type="button" role="tab" aria-selected="false" aria-controls="scene-panel" data-scene="build" tabindex="-1"><span class="tour-number">03</span><span>执行验证</span></button>
+        <button id="step-deliver" class="tour-step" type="button" role="tab" aria-selected="false" aria-controls="scene-panel" data-scene="deliver" tabindex="-1"><span class="tour-number">04</span><span>发布交付</span></button>
+        <span class="tour-indicator" aria-hidden="true"></span>
+      </div>
+      <div class="tour-panel" id="scene-panel" role="tabpanel" aria-labelledby="step-discover">
+        <figure class="product-figure"><div class="showcase-frame workflow-showcase" role="img" aria-label="SelfMe 需求 · AI 探索界面预览"><iframe id="workflow-frame" data-showcase-frame="workflow" src="assets/previews/workflow.html" title="SelfMe 工作流程界面预览" tabindex="-1" aria-hidden="true" sandbox="allow-scripts" loading="lazy"></iframe></div><figcaption><span id="scene-location">需求 · AI 探索</span></figcaption></figure>
+        <div class="tour-description"><div><p class="tour-state" id="scene-state"><span class="status-dot" aria-hidden="true"></span><span>发现值得推进的问题</span></p><h3 id="scene-title">先发现问题，再提出改进。</h3><p id="scene-description">围绕“更快找到笔记”的项目目标，查阅外部检索与交互资料，结合现有搜索方式提出正文匹配的候选需求，并保留依据与待验证事项。</p></div><dl><div><dt>AI 的工作</dt><dd id="scene-ai">围绕项目目标探索外部资料，结合项目现状整理候选与依据。</dd></div><div><dt>你的参与</dt><dd id="scene-human">明确项目目标与边界，决定哪些方向值得继续。</dd></div></dl></div>
+      </div>
+    </div>
+  </section>
 
-  <script src="script.js" defer></script>
+  <section class="capability-section section-space" id="capabilities" aria-labelledby="capability-title">
+    <div class="wrap">
+      <div class="context-grid">
+        <div class="context-copy"><p class="section-label">项目能力</p><h2 id="capability-title">记住整个项目，<br>让每一步都有上下文。</h2><p class="section-description">目标、长期约束、参考资料与已有成果，共同构成持续工作的背景。项目资料与工作记录会持续保留，供后续迭代使用。</p><p class="scope-note">从一份文档，到包含前后端、多端应用与设计资源的项目，按实际需要组织组成、依赖与交付。</p></div>
+        <figure class="product-figure project-figure"><div class="showcase-frame project-showcase" role="img" aria-label="SelfMe 项目组成界面，展示客户端、接口服务和共享契约的归属与依赖"><iframe id="project-frame" data-showcase-frame="project" src="assets/previews/project.html" title="SelfMe 项目组成界面预览" tabindex="-1" aria-hidden="true" sandbox="allow-scripts" loading="lazy"></iframe></div><figcaption><span>看清项目的组成与依赖</span></figcaption></figure>
+      </div>
+      <div class="principles-grid"><article><svg class="icon" aria-hidden="true"><use href="#i-history"/></svg><h3>按项目计划持续推进</h3><p>手动发起一轮工作，或按计划推进需求发现、开发与交付。</p></article><article><svg class="icon" aria-hidden="true"><use href="#i-compass"/></svg><h3>在需要判断时与你协作</h3><p>按你设定的审阅、验收与交付规则推进，在需要确认或无法继续时等待处理。</p></article><article><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg><h3>看清过程，追溯结果</h3><p>只读观察 CLI 输出，按需补充指导、暂停或停止。保留工作依据、成果修订与重要决定。</p></article></div>
+    </div>
+  </section>
+
+  <section class="faq-section section-space" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid"><div><p class="section-label">常见问题</p><h2 id="faq-title">开始之前，<br>你可能想了解。</h2></div><div class="faq-list">
+      <details><summary>和直接使用 Codex、Claude Code 有什么不同？<svg class="icon small" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>SelfMe 围绕项目目标持续发现需求，衔接评估、审阅、开发、验证与交付，并保留项目背景和工作记录，减少你反复交代背景、安排下一步和跟进结果的负担。实际工作仍由本机 Codex 或 Claude Code 完成。</p></details>
+      <details><summary>开始使用，需要准备什么？<svg class="icon small" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>准备一个本地项目目录，并安装好可正常使用的 Codex 或 Claude Code。接入项目后，设定目标和工作范围即可开始。</p></details>
+      <details><summary>需要同时安装两个 CLI，或另外配置模型 API 吗？<svg class="icon small" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>选择本机 Codex 或 Claude Code 中的一个即可，无需同时安装两者，也无需在 SelfMe 中额外配置模型 API。账号与模型在所选工具中配置，相关用量和费用按该工具的规则计算。</p></details>
+      <details><summary>开启自动演进后，我还能决定哪些事情？<svg class="icon small" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>你可以设定项目目标、工作范围、运行计划，以及审阅、验收和交付的确认规则。SelfMe 按这些规则推进，遇到需要你确认或无法继续的问题时等待处理。过程中可以补充指导、暂停或停止；关闭自动演进后，仍可手动发起 AI 辅助工作。</p></details>
+      <details><summary>支持哪些平台，如何选择安装包？<svg class="icon small" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>支持 macOS 与 Windows。下载区会自动推荐当前系统，并在能识别时匹配架构；你也可以手动选择其他安装包。版本、格式、体积与系统要求随所选安装包显示。</p></details>
+      <details><summary>在哪里查看源码和参与项目？<svg class="icon small" aria-hidden="true"><use href="#i-plus"/></svg></summary><p>你可以在 GitHub 查看 SelfMe 的源码与许可证、反馈问题，或参与项目贡献。</p></details>
+    </div></div>
+  </section>
+</main>
+<footer class="site-footer"><div class="wrap"><p>© <span id="year">2026</span> SelfMe</p></div></footer>
+
+<div class="download-options" id="download-options" role="dialog" aria-label="其他下载" hidden>
+  <div class="options-heading"><h2>下载 SelfMe</h2><button class="icon-button" id="close-download-options" type="button" aria-label="关闭下载选项"><svg class="icon small" aria-hidden="true"><use href="#i-close"/></svg></button></div>
+  <div class="download-package-list" id="download-package-list"></div>
+</div>
+<div class="site-notice" id="site-notice" hidden><svg class="icon small" aria-hidden="true"><use href="#i-info"/></svg><p id="notice-message" role="status" aria-live="polite" aria-atomic="true"></p><button class="icon-button" id="notice-close" type="button" aria-label="关闭提示"><svg class="icon small" aria-hidden="true"><use href="#i-close"/></svg></button></div>
+<noscript><p class="noscript-note">启用 JavaScript 可选择安装包、切换界面演示并查看下载与源码状态。</p></noscript>
 </body>
 </html>
